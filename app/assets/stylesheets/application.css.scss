@@ -16,6 +16,8 @@
  
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
 
 //typography styles
 h1, h2, h3 {
@@ -50,3 +52,4 @@ h1, h2, h3 {
     padding-top:50px;
     padding-bottom:100px;
 }
+
