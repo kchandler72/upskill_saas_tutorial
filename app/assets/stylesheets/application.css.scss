@@ -10,14 +10,15 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
  */
  
- @import 'bootstrap-sprockets';
- @import 'bootstrap';
  @import "font-awesome-sprockets";
  @import "font-awesome";
+ @import 'bootstrap-sprockets';
+ @import 'bootstrap';
+ 
 
 //typography styles
 h1, h2, h3 {
@@ -50,6 +51,18 @@ h1, h2, h3 {
       opacity:0.75;
     }
 }
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color:white;
+}
+
+.navbar-default .navbar-toggle {
+    border: 2px solid white;
+    &:hover, &:focus {
+      background-color:blue;
+    }
+}
+
 
 //Home page styles
 .home-heading{
