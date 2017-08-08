@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
     @profile = @user.build_profile(profile_params)
     if @profile.save
       flash[:sucess] = "Profile updated!"
-      redirect_to user_path( params[:user_id] )
+      redirect_to user_path(id: params[:user_id] )
     else
       render action: :new
     end  
@@ -24,6 +24,21 @@ class ProfilesController < ApplicationController
   def edit 
     @user = User.find( params[:user_id] )
     @profile = @user.profile
+  end
+  
+  # PUT to /users/:user_id/profile
+  def update
+    # retrieve the user from the database
+    @user = User.find( params[:user_id] )
+    # Retrieve that users profile
+    @profile = @user.profile
+    #Mass assign edited data
+    if @profile.update_attributes(profile_params)
+      flash[:success] = "Profile Updated!"
+      redirect_to user_path( params[:user_id] )
+    else
+      render action: :edit
+    end
   end
   
   private
